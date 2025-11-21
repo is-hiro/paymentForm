@@ -14,6 +14,7 @@ export const PaymentForm = () => {
     localValue: localStorage.getItem('token') || '',
   })
 
+
   const {totalCount} = useSelector((state) => state.products)
 
   const [searchProductQuery, setSearchProductQuery] = useState('')
