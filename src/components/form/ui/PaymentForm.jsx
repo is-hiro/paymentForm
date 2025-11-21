@@ -13,13 +13,14 @@ export const PaymentForm = () => {
     value: localStorage.getItem('token') || '',
     localValue: localStorage.getItem('token') || '',
   })
+
   const {totalCount} = useSelector((state) => state.products)
 
   const [searchProductQuery, setSearchProductQuery] = useState('')
 
   const {data} = useQuery({
     queryFn: getData,
-    queryKey: ['data'],
+    queryKey: ['data', currentToken.value],
     enabled: !!currentToken.value,
   })
 
